@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户注册</title>
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	function send() {
+		$.ajax({
+			url : "sendMsg",
+			type : "get",
+			dataType : "json",
+			data : {
+				'value' : $("input[name='value']").val()
+			},
+		});
+	}
+</script>
+</head>
+<body style="text-align: center">
+	<form action="loginServlet" method="post">
+		用户名:<input type="text" name="username" /> <br />
+		<br /> 密码:&nbsp;<input type="password" name="password" /> <br />
+		<br /> 手机号：<input type="text" name="value" />&nbsp;<input type="button" onclick="send()" value="发送验证码">
+		<br /> <br />验证码：<input type="text" name="vali" /><br /><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="提交">
+	</form>
+</body>
+</html>
